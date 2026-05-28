@@ -6,7 +6,7 @@ metadata:
   name: project-1-service
 
 spec:
-  type: NodePort
+  type: LoadBalancer
 
   selector:
     app: project-1
@@ -15,5 +15,5 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 30007
+```
 
