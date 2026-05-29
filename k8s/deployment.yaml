@@ -23,10 +23,14 @@ spec:
       - name: project-1-container
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         image: 811345154438.dkr.ecr.us-east-1.amazonaws.com/project-1:40
 =======
         image: 811345154438.dkr.ecr.us-east-1.amazonaws.com/project-1:40
 >>>>>>> 3209898 (chnages in port number to acces the app)
+=======
+        image: 811345154438.dkr.ecr.us-east-1.amazonaws.com/project-1:39
+>>>>>>> b453e75 (chnages in deplyment file)
 
         ports:
         - containerPort: 8080
