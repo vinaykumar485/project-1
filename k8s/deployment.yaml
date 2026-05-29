@@ -23,9 +23,9 @@ spec:
       - name: project-1-container
 
 <<<<<<< HEAD
-        image: 811345154438.dkr.ecr.us-east-1.amazonaws.com/project-1:38
+        image: 811345154438.dkr.ecr.us-east-1.amazonaws.com/project-1:40
 =======
-        image: 811345154438.dkr.ecr.us-east-1.amazonaws.com/project-1:38
+        image: 811345154438.dkr.ecr.us-east-1.amazonaws.com/project-1:40
 >>>>>>> 3209898 (chnages in port number to acces the app)
 
         ports:
