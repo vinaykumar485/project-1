@@ -1,0 +1,143 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: project-1=811345154438.dkr.ecr.us-east-1.amazonaws.com/project-1
+    argocd-image-updater.argoproj.io/project-1.update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: git
+  creationTimestamp: "2026-05-29T08:42:40Z"
+  generation: 454
+  name: project-1
+  namespace: argocd
+  resourceVersion: "462587"
+  uid: 688e5839-8229-4e89-b9dd-2cf2a053af65
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: k8s
+    repoURL: https://github.com/vinaykumar485/project-1
+    targetRevision: main
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: false
+      selfHeal: false
+    syncOptions:
+    - ApplyOutOfSyncOnly=true
+status:
+  conditions:
+  - lastTransitionTime: "2026-05-30T06:37:28Z"
+    message: 'Failed to load target state: failed to generate manifest for source
+      1 of 1: rpc error: code = FailedPrecondition desc = Failed to unmarshal "deployment.yaml":
+      failed to unmarshal manifest: error converting YAML to JSON: yaml: line 26:
+      could not find expected '':'''
+    type: ComparisonError
+  controllerNamespace: argocd
+  health:
+    lastTransitionTime: "2026-05-29T13:25:30Z"
+    status: Healthy
+  history:
+  - deployStartedAt: "2026-05-29T08:42:42Z"
+    deployedAt: "2026-05-29T08:42:42Z"
+    id: 0
+    initiatedBy:
+      automated: true
+    revision: 6758397179d8e3c013a7522aa9e47285a81fdd27
+    source:
+      path: k8s
+      repoURL: https://github.com/vinaykumar485/project-1
+      targetRevision: main
+  - deployStartedAt: "2026-05-29T12:41:46Z"
+    deployedAt: "2026-05-29T12:41:46Z"
+    id: 1
+    initiatedBy:
+      automated: true
+    revision: b6f029646c8f55353886d5728aced1fc51499a80
+    source:
+      path: k8s
+      repoURL: https://github.com/vinaykumar485/project-1
+      targetRevision: main
+  - deployStartedAt: "2026-05-29T12:51:42Z"
+    deployedAt: "2026-05-29T12:51:43Z"
+    id: 2
+    initiatedBy:
+      automated: true
+    revision: 8c5ade31f88b73f271b1933b58c69201524fb6aa
+    source:
+      path: k8s
+      repoURL: https://github.com/vinaykumar485/project-1
+      targetRevision: main
+  - deployStartedAt: "2026-05-29T13:01:46Z"
+    deployedAt: "2026-05-29T13:01:46Z"
+    id: 3
+    initiatedBy:
+      automated: true
+    revision: 10076e6c41b0578ff8a96ef092e0e4a39d54e6ca
+    source:
+      path: k8s
+      repoURL: https://github.com/vinaykumar485/project-1
+      targetRevision: main
+  operationState:
+    finishedAt: "2026-05-29T13:01:46Z"
+    message: successfully synced (all tasks run)
+    operation:
+      initiatedBy:
+        automated: true
+      retry:
+        limit: 5
+      sync:
+        revision: 10076e6c41b0578ff8a96ef092e0e4a39d54e6ca
+        source:
+          path: k8s
+          repoURL: https://github.com/vinaykumar485/project-1
+          targetRevision: main
+        syncOptions:
+        - ApplyOutOfSyncOnly=true
+    phase: Succeeded
+    startedAt: "2026-05-29T13:01:46Z"
+    syncResult:
+      resources:
+      - group: apps
+        hookPhase: Running
+        images:
+        - 811345154438.dkr.ecr.us-east-1.amazonaws.com/project-1:37
+        kind: Deployment
+        message: deployment.apps/project-1-deployment configured
+        name: project-1-deployment
+        namespace: default
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      revision: 10076e6c41b0578ff8a96ef092e0e4a39d54e6ca
+      source:
+        path: k8s
+        repoURL: https://github.com/vinaykumar485/project-1
+        targetRevision: main
+  reconciledAt: "2026-05-30T06:43:35Z"
+  resourceHealthSource: appTree
+  resources:
+  - group: networking.k8s.io
+    kind: Ingress
+    name: java-ingress
+    namespace: default
+    requiresPruning: true
+    status: Unknown
+    version: v1
+  sourceHydrator: {}
+  summary:
+    externalURLs:
+    - http://ad6873c9e1dd6429e9c7d64e2e3ad541-924a2c3d1da199df.elb.us-east-1.amazonaws.com/
+  sync:
+    comparedTo:
+      destination:
+        namespace: default
+        server: https://kubernetes.default.svc
+      source:
+        path: k8s
+        repoURL: https://github.com/vinaykumar485/project-1
+        targetRevision: main
+    revision: main
+    status: Unknown
