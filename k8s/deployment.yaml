@@ -22,7 +22,7 @@ spec:
       containers:
       - name: project-1-container
 
-        image: 811345154438.dkr.ecr.us-east-1.amazonaws.com/project-1:stable
+        image: 811345154438.dkr.ecr.us-east-1.amazonaws.com/project-1:43
 
         ports:
         - containerPort: 8080
