@@ -141,3 +141,18 @@ status:
         targetRevision: main
     revision: main
     status: Unknown
+  management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    server:
+      port: 8081
