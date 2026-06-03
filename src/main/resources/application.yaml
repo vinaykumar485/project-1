@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: demo
+    name: project-1
 
 management:
   endpoints:
